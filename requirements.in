@@ -1,0 +1,26 @@
+# Deep Learning Framework
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch
+torchvision
+torchaudio
+
+# Data Processing
+numpy
+pandas
+opencv-python
+Pillow
+
+# Visualization
+streamlit
+matplotlib
+plotly
+
+# Development Tools
+jupyter
+pytest
+black
+flake8
+
+# Additional Dependencies
+scikit-learn
+tqdm
