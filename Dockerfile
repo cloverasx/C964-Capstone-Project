@@ -47,11 +47,12 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 ENV CORS_ORIGINS="http://localhost,http://localhost:80,http://127.0.0.1,http://127.0.0.1:80"
 
-# Copy the startup script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# Copy and setup the startup script
+COPY start.sh .
+RUN chmod +x start.sh && \
+    sed -i 's/\r$//' start.sh
 
 EXPOSE 80 8000
 
 # Start both nginx and uvicorn
-CMD ["/start.sh"] 
+CMD ["./start.sh"] 
