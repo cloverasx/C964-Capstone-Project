@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@shadcn/ui": "^0.0.4",
+    "lucide-react": "^0.462.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}

@@ -1,0 +1,1955 @@
+[
+  {
+    "make": "AM",
+    "models": [
+      {
+        "name": "General Hummer SUV",
+        "years": [
+          2000
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Acura",
+    "models": [
+      {
+        "name": "Integra Type R",
+        "years": [
+          2001
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "RL Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "TL Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "TL Type-S",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "TSX Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "ZDX Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Aston",
+    "models": [
+      {
+        "name": "Martin V8 Vantage Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Martin V8 Vantage Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Martin Virage Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Martin Virage Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Audi",
+    "models": [
+      {
+        "name": "100 Sedan",
+        "years": [
+          1994
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "100 Wagon",
+        "years": [
+          1994
+        ],
+        "body_styles": [
+          "Wagon"
+        ]
+      },
+      {
+        "name": "A5 Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "R8 Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "RS 4 Convertible",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "S4 Sedan",
+        "years": [
+          2007,
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "S5 Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "S5 Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "S6 Sedan",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "TT Hatchback",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "TT RS Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "TTS Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "V8 Sedan",
+        "years": [
+          1994
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "BMW",
+    "models": [
+      {
+        "name": "1 Series Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "1 Series Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "3 Series Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "3 Series Wagon",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Wagon"
+        ]
+      },
+      {
+        "name": "6 Series Convertible",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "ActiveHybrid 5 Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "M3 Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "M5 Sedan",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "M6 Convertible",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "X3 SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "X5 SUV",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "X6 SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Z4 Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Bentley",
+    "models": [
+      {
+        "name": "Arnage Sedan",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Continental Flying Spur Sedan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Continental GT Coupe",
+        "years": [
+          2007,
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Continental Supersports Conv. Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Mulsanne Sedan",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Bugatti",
+    "models": [
+      {
+        "name": "Veyron 16.4 Convertible",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Veyron 16.4 Coupe",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Buick",
+    "models": [
+      {
+        "name": "Enclave SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Rainier SUV",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Regal GS",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Verano Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Cadillac",
+    "models": [
+      {
+        "name": "CTS-V Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Escalade EXT Crew Cab",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "SRX SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Chevrolet",
+    "models": [
+      {
+        "name": "Avalanche Crew Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "Camaro Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Cobalt SS",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Corvette Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Corvette Ron Fellows Edition Z06",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Corvette ZR1",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Express Cargo Van",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      },
+      {
+        "name": "Express Van",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      },
+      {
+        "name": "HHR SS",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Impala Sedan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Malibu Hybrid Sedan",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Malibu Sedan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Monte Carlo Coupe",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Silverado 1500 Classic Extended Cab",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Extended Cab"
+        ]
+      },
+      {
+        "name": "Silverado 1500 Extended Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Extended Cab"
+        ]
+      },
+      {
+        "name": "Silverado 1500 Hybrid Crew Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "Silverado 1500 Regular Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Regular Cab"
+        ]
+      },
+      {
+        "name": "Silverado 2500HD Regular Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Regular Cab"
+        ]
+      },
+      {
+        "name": "Sonic Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Tahoe Hybrid SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "TrailBlazer SS",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Traverse SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Chrysler",
+    "models": [
+      {
+        "name": "300 SRT-8",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Aspen SUV",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Crossfire Convertible",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "PT Cruiser Convertible",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Sebring Convertible",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Town and Country Minivan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Minivan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Daewoo",
+    "models": [
+      {
+        "name": "Nubira Wagon",
+        "years": [
+          2002
+        ],
+        "body_styles": [
+          "Wagon"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Dodge",
+    "models": [
+      {
+        "name": "Caliber Wagon",
+        "years": [
+          2007,
+          2012
+        ],
+        "body_styles": [
+          "Wagon"
+        ]
+      },
+      {
+        "name": "Caravan Minivan",
+        "years": [
+          1997
+        ],
+        "body_styles": [
+          "Minivan"
+        ]
+      },
+      {
+        "name": "Challenger SRT8",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Charger Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Charger SRT-8",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Dakota Club Cab",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Dakota Crew Cab",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "Durango SUV",
+        "years": [
+          2007,
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Journey SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Magnum Wagon",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "Wagon"
+        ]
+      },
+      {
+        "name": "Ram Pickup 3500 Crew Cab",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "Ram Pickup 3500 Quad Cab",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Sprinter Cargo Van",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Eagle",
+    "models": [
+      {
+        "name": "Talon Hatchback",
+        "years": [
+          1998
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "FIAT",
+    "models": [
+      {
+        "name": "500 Abarth",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "500 Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Ferrari",
+    "models": [
+      {
+        "name": "458 Italia Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "458 Italia Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "California Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "FF Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Fisker",
+    "models": [
+      {
+        "name": "Karma Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Ford",
+    "models": [
+      {
+        "name": "E-Series Wagon Van",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Wagon"
+        ]
+      },
+      {
+        "name": "Edge SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Expedition EL SUV",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "F-150 Regular Cab",
+        "years": [
+          2007,
+          2012
+        ],
+        "body_styles": [
+          "Regular Cab"
+        ]
+      },
+      {
+        "name": "F-450 Super Duty Crew Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "Fiesta Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Focus Sedan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Freestar Minivan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Minivan"
+        ]
+      },
+      {
+        "name": "GT Coupe",
+        "years": [
+          2006
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Mustang Convertible",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "Ranger SuperCab",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "GMC",
+    "models": [
+      {
+        "name": "Acadia SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Canyon Extended Cab",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Extended Cab"
+        ]
+      },
+      {
+        "name": "Savana Van",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      },
+      {
+        "name": "Terrain SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Yukon Hybrid SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Geo",
+    "models": [
+      {
+        "name": "Metro Convertible",
+        "years": [
+          1993
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "HUMMER",
+    "models": [
+      {
+        "name": "H2 SUT Crew Cab",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      },
+      {
+        "name": "H3T Crew Cab",
+        "years": [
+          2010
+        ],
+        "body_styles": [
+          "Crew Cab"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Honda",
+    "models": [
+      {
+        "name": "Accord Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Accord Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Odyssey Minivan",
+        "years": [
+          2007,
+          2012
+        ],
+        "body_styles": [
+          "Minivan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Hyundai",
+    "models": [
+      {
+        "name": "Accent Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Azera Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Elantra Sedan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Elantra Touring Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "Genesis Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Santa Fe SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Sonata Hybrid Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Sonata Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Tucson SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Veloster Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "Veracruz SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Infiniti",
+    "models": [
+      {
+        "name": "G Coupe IPL",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "QX56 SUV",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Isuzu",
+    "models": [
+      {
+        "name": "Ascender SUV",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Jaguar",
+    "models": [
+      {
+        "name": "XK XKR",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Jeep",
+    "models": [
+      {
+        "name": "Compass SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Grand Cherokee SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Liberty SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Patriot SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Wrangler SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Lamborghini",
+    "models": [
+      {
+        "name": "Aventador Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Diablo Coupe",
+        "years": [
+          2001
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Gallardo LP 570-4 Superleggera",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Reventon Coupe",
+        "years": [
+          2008
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Land",
+    "models": [
+      {
+        "name": "Rover LR2 SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Rover Range Rover SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Lincoln",
+    "models": [
+      {
+        "name": "Town Car Sedan",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "MINI",
+    "models": [
+      {
+        "name": "Cooper Roadster Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Maybach",
+    "models": [
+      {
+        "name": "Landaulet Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Mazda",
+    "models": [
+      {
+        "name": "Tribute SUV",
+        "years": [
+          2011
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "McLaren",
+    "models": [
+      {
+        "name": "MP4-12C Coupe",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Mercedes-Benz",
+    "models": [
+      {
+        "name": "300-Class Convertible",
+        "years": [
+          1993
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "C-Class Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "E-Class Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "S-Class Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "SL-Class Coupe",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Sprinter Van",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Mitsubishi",
+    "models": [
+      {
+        "name": "Lancer Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Nissan",
+    "models": [
+      {
+        "name": "240SX Coupe",
+        "years": [
+          1998
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Juke Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "Leaf Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "NV Passenger Van",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Plymouth",
+    "models": [
+      {
+        "name": "Neon Coupe",
+        "years": [
+          1999
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Porsche",
+    "models": [
+      {
+        "name": "Panamera Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Ram",
+    "models": [
+      {
+        "name": "C_V Cargo Van Minivan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Van"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Rolls-Royce",
+    "models": [
+      {
+        "name": "Ghost Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Phantom Drophead Coupe Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      },
+      {
+        "name": "Phantom Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Scion",
+    "models": [
+      {
+        "name": "xD Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Spyker",
+    "models": [
+      {
+        "name": "C8 Convertible",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      },
+      {
+        "name": "C8 Coupe",
+        "years": [
+          2009
+        ],
+        "body_styles": [
+          "Coupe"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Suzuki",
+    "models": [
+      {
+        "name": "Aerio Sedan",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Kizashi Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "SX4 Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "SX4 Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Tesla",
+    "models": [
+      {
+        "name": "Model S Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Toyota",
+    "models": [
+      {
+        "name": "4Runner SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      },
+      {
+        "name": "Camry Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Corolla Sedan",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "Sequoia SUV",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Volkswagen",
+    "models": [
+      {
+        "name": "Beetle Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "Golf Hatchback",
+        "years": [
+          1991,
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "Volvo",
+    "models": [
+      {
+        "name": "240 Sedan",
+        "years": [
+          1993
+        ],
+        "body_styles": [
+          "Sedan"
+        ]
+      },
+      {
+        "name": "C30 Hatchback",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Hatchback"
+        ]
+      },
+      {
+        "name": "XC90 SUV",
+        "years": [
+          2007
+        ],
+        "body_styles": [
+          "SUV"
+        ]
+      }
+    ]
+  },
+  {
+    "make": "smart",
+    "models": [
+      {
+        "name": "fortwo Convertible",
+        "years": [
+          2012
+        ],
+        "body_styles": [
+          "Convertible"
+        ]
+      }
+    ]
+  }
+]

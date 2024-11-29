@@ -1,26 +1,37 @@
+# Web Framework
+fastapi
+uvicorn
+python-multipart
+
 # Deep Learning Framework
 --find-links https://download.pytorch.org/whl/torch_stable.html
 torch
 torchvision
 torchaudio
+timm
+ultralytics
 
 # Data Processing
 numpy
 pandas
 opencv-python
 Pillow
+requests
 
-# Visualization
-streamlit
-matplotlib
-plotly
+# Machine Learning
+scikit-learn
 
 # Development Tools
-jupyter
 pytest
 black
 flake8
 
-# Additional Dependencies
-scikit-learn
+# Progress Bars
 tqdm
+
+# CORS and Security
+python-jose[cryptography]
+passlib[bcrypt]
+
+# Visualization
+matplotlib
