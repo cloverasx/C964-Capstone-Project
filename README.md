@@ -16,8 +16,12 @@ AVIS is a web application that uses AI to identify vehicles from images and prov
 - Docker
 - Docker Compose
 - Git
+- PowerShell (Windows) or Bash (Linux/Mac)
+- curl (Linux/Mac)
 
 ## Quick Start
+
+### Automated Setup (Recommended)
 
 1. Clone the repository:
 ```bash
@@ -25,14 +29,50 @@ git clone https://github.com/cloverasx/C964-Capstone-Project.git
 cd C964-Capstone-Project
 ```
 
-2. Start the application:
-```bash
-docker-compose up --build
+2. Run the setup script:
+
+Windows (PowerShell):
+```powershell
+.\setup.ps1
 ```
+
+Linux/Mac (Bash):
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+The setup script will:
+- Check for required dependencies
+- Download necessary model files
+- Place files in the correct directories
+- Start the Docker containers
 
 3. Access the application:
 - Frontend: Open your browser and navigate to `http://localhost`
 - Backend API: Available at `http://localhost:8000`
+
+### Manual Setup
+
+If you prefer to set up manually:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/cloverasx/C964-Capstone-Project.git
+cd C964-Capstone-Project
+```
+
+2. Download model files:
+   - Go to the [Releases](https://github.com/cloverasx/C964-Capstone-Project/releases) page
+   - Download `model_files.zip` from the latest release
+   - Extract the contents to their respective directories:
+     - Place `best_model.pt` in `ml/models/vehicle_classifier/`
+     - Place `label_encoders.pt` in `ml/models/vehicle_classifier/`
+
+3. Start the application:
+```bash
+docker-compose up --build
+```
 
 ## Project Structure
 
@@ -48,6 +88,9 @@ docker-compose up --build
 │       └── api/          # API endpoints
 ├── ml/                   # Machine learning code
 │   ├── models/          # Model inference and saved models
+│   │   └── vehicle_classifier/  # Vehicle classification models
+│   │       ├── best_model.pt   # Main classification model
+│   │       └── label_encoders.pt # Label encoders for predictions
 │   ├── train/          # Training pipeline
 │   └── pretrain/       # Data preparation scripts
 ├── Docker Files
@@ -59,8 +102,21 @@ docker-compose up --build
     ├── requirements.in  # Python package requirements
     ├── requirements.txt # Locked Python dependencies
     └── .gitignore      # Git ignore rules
-
 ```
+
+## Required Model Files
+
+The following model files are required for the application to function:
+
+1. `best_model.pt` (ml/models/vehicle_classifier/)
+   - Main vehicle classification model
+   - Size: ~1GB
+
+2. `label_encoders.pt` (ml/models/vehicle_classifier/)
+   - Label encoders for prediction mapping
+   - Size: ~6.2KB
+
+These files can be downloaded from the [Releases](https://github.com/cloverasx/C964-Capstone-Project/releases) page.
 
 ## Development Setup
 
