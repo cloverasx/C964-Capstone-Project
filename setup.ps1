@@ -44,7 +44,8 @@ try {
 # Extract model files
 Write-Host "Extracting model files..." -ForegroundColor Yellow
 try {
-    Expand-Archive -Path $zipPath -DestinationPath "." -Force
+    # Extract to the model directory
+    Expand-Archive -Path $zipPath -DestinationPath $modelDir -Force
     Remove-Item $zipPath
     Write-Host "Model files extracted successfully." -ForegroundColor Green
 } catch {

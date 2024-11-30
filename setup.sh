@@ -33,7 +33,8 @@ fi
 
 # Create necessary directories
 echo -e "${YELLOW}Creating directories...${NC}"
-mkdir -p ml/models/vehicle_classifier
+MODEL_DIR="ml/models/vehicle_classifier"
+mkdir -p "$MODEL_DIR"
 
 # Download model files
 echo -e "${YELLOW}Downloading model files...${NC}"
@@ -46,7 +47,7 @@ echo -e "${GREEN}Model files downloaded successfully.${NC}"
 
 # Extract model files
 echo -e "${YELLOW}Extracting model files...${NC}"
-if ! unzip -o model_files.zip; then
+if ! unzip -o model_files.zip -d "$MODEL_DIR"; then
     echo -e "${RED}Error extracting model files${NC}"
     rm model_files.zip
     exit 1
