@@ -9,6 +9,7 @@ AVIS is a web application that uses AI to identify vehicles from images and prov
 - AI-powered vehicle identification (make, model, year)
 - Similar vehicle recommendations
 - Confidence scores for predictions
+- Interactive tooltips for feature explanations
 - Modern, responsive UI
 
 ## Prerequisites
@@ -78,30 +79,30 @@ docker-compose up --build
 
 ```
 .
-├── avis-dashboard/          # React frontend
-│   ├── public/             # Static files
-│   └── src/               # React source code
-│       ├── components/    # React components
-│       └── features/     # Feature-specific components
-├── backend/               # Python backend
-│   └── src/              # Source code
-│       └── api/          # API endpoints
-├── ml/                   # Machine learning code
+├── avis-dashboard/      # React frontend
+│   ├── public/          # Static files
+│   └── src/             # React source code
+│       ├── components/  # React components
+│       └── features/    # Feature-specific components
+├── backend/             # Python backend
+│   └── src/             # Source code
+│       └── api/         # API endpoints
+├── ml/                  # Machine learning code
 │   ├── models/          # Model inference and saved models
 │   │   └── vehicle_classifier/  # Vehicle classification models
-│   │       ├── best_model.pt   # Main classification model
-│   │       └── label_encoders.pt # Label encoders for predictions
-│   ├── train/          # Training pipeline
-│   └── pretrain/       # Data preparation scripts
+│   │       ├── best_model.pt  # Main classification model
+│   │       └── label_encoders.pt  # Label encoders for predictions
+│   ├── train/           # Training pipeline
+│   └── pretrain/        # Data preparation scripts
 ├── Docker Files
 │   ├── Dockerfile       # Main Docker configuration
-│   ├── docker-compose.yml # Docker Compose configuration
-│   ├── nginx.conf      # Nginx configuration
-│   └── start.sh        # Container startup script
+│   ├── docker-compose.yml  # Docker Compose configuration
+│   ├── nginx.conf       # Nginx configuration
+│   └── start.sh         # Container startup script
 └── Configuration Files
     ├── requirements.in  # Python package requirements
-    ├── requirements.txt # Locked Python dependencies
-    └── .gitignore      # Git ignore rules
+    ├── requirements.txt  # Locked Python dependencies
+    └── .gitignore       # Git ignore rules
 ```
 
 ## Required Model Files

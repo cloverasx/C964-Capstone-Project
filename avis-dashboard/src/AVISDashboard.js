@@ -9,9 +9,40 @@
 
 import React, { useState, useEffect } from 'react';
 import { UploadCloud } from 'lucide-react';
+import { Popover } from '@headlessui/react';
+import VehicleVisualizations from './VehicleVisualizations';
 
-// API endpoint for predictions
+// Tooltip wrapper component for consistent styling
+const TooltipWrapper = ({ children, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div 
+      className="relative w-full h-full"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <Popover className="relative w-full h-full">
+        <Popover.Button as="div" className="w-full h-full outline-none">
+          {children}
+        </Popover.Button>
+        {isOpen && (
+          <Popover.Panel static className="absolute z-10 px-3 py-2 text-sm bg-gray-900 text-white rounded shadow-lg top-full left-1/2 transform -translate-x-1/2 mt-2">
+            {content}
+            <div className="absolute top-[-8px] left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45" />
+          </Popover.Panel>
+        )}
+      </Popover>
+    </div>
+  );
+};
+
+// API endpoints
+// Using relative URLs for Docker compatibility
+// When running in development without Docker, configure a proxy in package.json
+// When running in Docker, nginx reverse proxy handles routing
 const API_ENDPOINT = '/api/predict';
+const VEHICLES_API_ENDPOINT = '/api/vehicles';
 
 // Recommendation system utility functions
 const normalizeYear = (year) => {
@@ -78,7 +109,7 @@ const calculateSimilarity = (vehicle1, vehicle2) => {
 
 const getVehicleDatabase = async () => {
   try {
-    const response = await fetch('/api/vehicles');
+    const response = await fetch(VEHICLES_API_ENDPOINT);
     if (!response.ok) {
       throw new Error('Failed to fetch vehicle database');
     }
@@ -116,33 +147,38 @@ const getVehicleRecommendations = async (identifiedVehicle) => {
 
 // VehicleRecommendations component
 const VehicleRecommendations = ({ recommendations }) => {
-  if (!recommendations || recommendations.length === 0) {
-    return null;
-  }
+  if (!recommendations || recommendations.length === 0) return null;
 
   return (
-    <div className="bg-white rounded-lg shadow p-4">
-      <h3 className="text-md font-semibold text-gray-800 mb-2">
-        Similar Vehicles
-      </h3>
-      <div className="grid grid-cols-2 gap-2">
-        {recommendations.map((vehicle, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between p-2 bg-gray-50 rounded hover:bg-gray-100 transition-colors"
-          >
-            <div className="flex-1 min-w-0">
-              <div className="text-sm font-medium text-gray-800 truncate">
-                {vehicle.year} {vehicle.make} {vehicle.model}
-              </div>
-              <div className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full inline-block mt-1">
-                {(vehicle.similarityScore * 100).toFixed(0)}% Match
+    <TooltipWrapper content="Shows similar vehicles based on make, model, year, and body style. Each vehicle displays a similarity score indicating how closely it matches the identified vehicle.">
+      <div className="bg-white rounded-lg shadow p-3">
+        <h3 className="text-lg font-semibold mb-2">Similar Vehicles</h3>
+        <div className="grid md:grid-cols-5 gap-2">
+          {recommendations.map((vehicle, index) => (
+            <div key={index} className="border rounded p-2">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-medium truncate">
+                    {vehicle.make} {vehicle.model}
+                  </span>
+                  <span className="ml-1 text-sm text-gray-600 shrink-0">
+                    {vehicle.year}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between mt-1">
+                  <span className="text-sm text-gray-500">
+                    {vehicle.body_style}
+                  </span>
+                  <span className="text-sm bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full shrink-0">
+                    {((vehicle.similarityScore || 0) * 100).toFixed(1)}%
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </TooltipWrapper>
   );
 };
 
@@ -187,6 +223,51 @@ const detectBodyStyle = (model) => {
   
   // Default to Sedan if no body style is detected
   return 'Sedan';
+};
+
+// PredictionCard Component
+const PredictionCard = ({ title, predictionData }) => {
+  if (!predictionData) return null;
+
+  const tooltipContent = {
+    Make: "Shows predicted manufacturer with confidence scores and alternative matches",
+    Model: "Shows predicted model with confidence scores and alternative matches",
+    Year: "Shows predicted year with confidence scores and alternative matches"
+  };
+
+  return (
+    <TooltipWrapper content={tooltipContent[title]}>
+      <div className="bg-white rounded-lg shadow p-3 h-full">
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <div className="space-y-2">
+          <div className="flex justify-between items-center">
+            <span className="font-semibold">{predictionData.prediction}</span>
+            <span className="text-sm text-gray-600">
+              {(predictionData.confidence * 100).toFixed(1)}% confidence
+            </span>
+          </div>
+          <div className="space-y-1">
+            {predictionData.top_5.map(([label, conf], index) => (
+              <div key={index} className="relative pt-0.5">
+                <div className="flex justify-between mb-0.5">
+                  <span className="text-sm font-medium">{label}</span>
+                  <span className="text-sm font-medium">
+                    {(conf * 100).toFixed(1)}%
+                  </span>
+                </div>
+                <div className="overflow-hidden h-1.5 text-xs flex rounded bg-blue-200">
+                  <div
+                    className="bg-blue-500"
+                    style={{ width: `${conf * 100}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </TooltipWrapper>
+  );
 };
 
 // Main Dashboard Component
@@ -448,32 +529,75 @@ const AVISDashboard = () => {
           </p>
         </div>
 
-        {/* Input Section */}
-        <div className="grid md:grid-cols-2 gap-4">
-          {/* File Upload Area */}
-          <div className="bg-white rounded-lg shadow p-4">
-            <h2 className="text-lg font-semibold mb-2">Upload Image</h2>
-            <div className="flex items-center justify-center w-full">
+        {/* Main Content */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {/* Integrated Upload Section */}
+          <div className="bg-white rounded-lg shadow p-3 h-[260px]">
+            <div className="flex flex-col h-full">
+              {/* Header and URL Input Row */}
+              <div className="flex items-center gap-2 mb-2">
+                <h2 className="text-lg font-semibold flex-shrink-0">Upload Vehicle Image</h2>
+              </div>
+              
+              <div className="flex gap-2 mb-2">
+                <input
+                  type="url"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="Enter image URL"
+                  className="flex-1 p-1.5 border rounded text-sm"
+                />
+                <button
+                  onClick={handleUrlSubmit}
+                  disabled={loading}
+                  className="bg-blue-500 text-white px-3 py-1.5 rounded hover:bg-blue-600 text-sm disabled:opacity-50 flex-shrink-0"
+                >
+                  {loading ? 'Analyzing...' : 'Analyze'}
+                </button>
+              </div>
+
+              {/* Combined Drop Zone and Preview */}
               <label 
-                className={`flex flex-col w-full h-24 border-2 border-dashed 
+                className={`flex flex-col flex-1 w-full border-2 border-dashed 
                   ${isDragging 
                     ? 'border-blue-500 bg-blue-50' 
-                    : 'hover:bg-gray-50 hover:border-gray-300 border-gray-300'
-                  } transition-colors duration-150 ease-in-out cursor-pointer`}
+                    : previewUrl
+                      ? 'border-transparent'
+                      : 'hover:bg-gray-50 hover:border-gray-300 border-gray-300'
+                  } transition-colors duration-150 ease-in-out cursor-pointer rounded-lg overflow-hidden relative`}
                 onDragEnter={handleDragEnter}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
               >
-                <div className="flex flex-col items-center justify-center pt-4">
-                  <UploadCloud className={`w-6 h-6 ${isDragging ? 'text-blue-500' : 'text-gray-400'}`} />
-                  <p className={`pt-1 text-xs ${isDragging ? 'text-blue-500' : 'text-gray-400'}`}>
-                    {isDragging ? 'Drop image here' : 'Drop image here or click to select'}
-                  </p>
-                </div>
+                {previewUrl ? (
+                  <>
+                    <img
+                      src={previewUrl}
+                      alt="Vehicle"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-200 flex items-center justify-center">
+                      <div className="text-transparent hover:text-white transition-colors duration-200 text-center">
+                        <UploadCloud className="w-6 h-6 mx-auto" />
+                        <p className="text-sm">Drop new image or click to replace</p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <UploadCloud className={`w-6 h-6 ${isDragging ? 'text-blue-500' : 'text-gray-400'}`} />
+                    <p className={`mt-1 text-sm ${isDragging ? 'text-blue-500' : 'text-gray-500'}`}>
+                      {isDragging ? 'Drop image here' : 'Drop image here or click to select'}
+                    </p>
+                    <p className="mt-0.5 text-xs text-gray-400">
+                      or use URL input above
+                    </p>
+                  </div>
+                )}
                 <input
                   type="file"
-                  className="opacity-0"
+                  className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
                   accept="image/*"
                   onChange={handleFileChange}
                 />
@@ -481,95 +605,44 @@ const AVISDashboard = () => {
             </div>
           </div>
 
-          {/* URL Input Area */}
-          <div className="bg-white rounded-lg shadow p-4">
-            <h2 className="text-lg font-semibold mb-2">Image URL</h2>
-            <form onSubmit={handleUrlSubmit} className="space-y-2">
-              <div>
-                <input
-                  type="url"
-                  value={imageUrl}
-                  onChange={(e) => setImageUrl(e.target.value)}
-                  placeholder="Enter image URL"
-                  className="w-full p-2 border rounded text-sm"
-                />
+          {/* Predictions Section */}
+          {predictions ? (
+            <div className="col-span-2">
+              <div className="grid grid-cols-3 gap-2">
+                <div className="h-[260px]">
+                  <PredictionCard title="Make" predictionData={predictions.make} />
+                </div>
+                <div className="h-[260px]">
+                  <PredictionCard title="Model" predictionData={predictions.model} />
+                </div>
+                <div className="h-[260px]">
+                  <PredictionCard title="Year" predictionData={predictions.year} />
+                </div>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 text-sm"
-                disabled={loading}
-              >
-                {loading ? 'Analyzing...' : 'Analyze'}
-              </button>
-            </form>
-          </div>
+            </div>
+          ) : (
+            <div className="col-span-2"></div>
+          )}
         </div>
 
-        {/* Error Display */}
-        {error && (
-          <div className="bg-red-50 border-l-4 border-red-500 p-3 text-sm">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <UploadCloud className="h-4 w-4 text-red-400" />
-              </div>
-              <div className="ml-2">
-                <p className="text-red-700">{error}</p>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Results Section */}
-        {(previewUrl || loading) && (
-          <div className="grid md:grid-cols-5 gap-4">
-            {/* Image Preview */}
-            <div className="md:col-span-2 bg-white rounded-lg shadow p-4">
-              <h2 className="text-lg font-semibold mb-2">Image Preview</h2>
-              <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
-                {previewUrl && (
-                  <img
-                    src={previewUrl}
-                    alt="Vehicle"
-                    className="w-full h-full object-cover"
-                  />
-                )}
-              </div>
-            </div>
+        {predictions && (
+          <div className="space-y-4 mt-6">
+            <VehicleVisualizations 
+              predictions={predictions}
+              recommendations={recommendations}
+            />
 
-            {/* Predictions and Recommendations Display */}
-            <div className="md:col-span-3">
-              {loading ? (
-                <div className="bg-white rounded-lg shadow p-4">
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500" />
-                    <span className="text-sm">Analyzing image...</span>
-                  </div>
+            {loadingRecommendations ? (
+              <div className="bg-white rounded-lg shadow p-3">
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500" />
+                  <span className="text-sm">Loading recommendations...</span>
                 </div>
-              ) : (
-                predictions && (
-                  <div className="space-y-4">
-                    {/* Predictions Grid */}
-                    <div className="grid grid-cols-3 gap-2">
-                      {renderPredictionCard('Make', predictions)}
-                      {renderPredictionCard('Model', predictions)}
-                      {renderPredictionCard('Year', predictions)}
-                    </div>
-                    
-                    {/* Recommendations */}
-                    {loadingRecommendations ? (
-                      <div className="bg-white rounded-lg shadow p-4">
-                        <div className="flex items-center justify-center space-x-2">
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500" />
-                          <span className="text-sm">Loading recommendations...</span>
-                        </div>
-                      </div>
-                    ) : (
-                      <VehicleRecommendations recommendations={recommendations} />
-                    )}
-                  </div>
-                )
-              )}
-            </div>
+              </div>
+            ) : (
+              <VehicleRecommendations recommendations={recommendations} />
+            )}
           </div>
         )}
       </div>
