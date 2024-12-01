@@ -6,6 +6,8 @@ COPY avis-dashboard/package*.json ./
 RUN npm install
 
 COPY avis-dashboard/ ./
+# Copy accuracy plots to public directory
+COPY ml/models/vehicle_classifier/accuracy_plots.png ./public/
 RUN npm run build
 
 # Stage 2: Build the Python backend and serve the application

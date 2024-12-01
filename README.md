@@ -10,19 +10,26 @@ AVIS is a web application that uses AI to identify vehicles from images and prov
 - Similar vehicle recommendations
 - Confidence scores for predictions
 - Interactive tooltips for feature explanations
+- Model training metrics visualization
 - Modern, responsive UI
 
 ## Prerequisites
 
-- Docker
-- Docker Compose
-- Git
+For Docker installation (recommended):
+- Docker Desktop installed and running
+- Docker Compose installed
+- Git installed
 - PowerShell (Windows) or Bash (Linux/Mac)
-- curl (Linux/Mac)
+
+For local installation:
+- Python 3.12
+- Node.js 16 or higher
+- Git installed
+- npm installed
 
 ## Quick Start
 
-### Automated Setup (Recommended)
+### Docker Installation (Recommended)
 
 1. Clone the repository:
 ```bash
@@ -31,7 +38,6 @@ cd C964-Capstone-Project
 ```
 
 2. Run the setup script:
-
 Windows (PowerShell):
 ```powershell
 .\setup.ps1
@@ -43,19 +49,11 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-The setup script will:
-- Check for required dependencies
-- Download necessary model files
-- Place files in the correct directories
-- Start the Docker containers
-
 3. Access the application:
 - Frontend: Open your browser and navigate to `http://localhost`
 - Backend API: Available at `http://localhost:8000`
 
-### Manual Setup
-
-If you prefer to set up manually:
+### Local Installation
 
 1. Clone the repository:
 ```bash
@@ -70,40 +68,78 @@ cd C964-Capstone-Project
      - Place `best_model.pt` in `ml/models/vehicle_classifier/`
      - Place `label_encoders.pt` in `ml/models/vehicle_classifier/`
 
-3. Start the application:
+3. Set up the backend:
 ```bash
-docker-compose up --build
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn backend.src.api.vehicle_identification_api:app --reload
 ```
+
+4. Set up the frontend:
+```bash
+cd avis-dashboard
+npm install
+npm start
+```
+
+5. Access the application:
+- Frontend: Open your browser and navigate to `http://localhost:3000`
+- Backend API: Available at `http://localhost:8000`
 
 ## Project Structure
 
 ```
-.
-├── avis-dashboard/      # React frontend
-│   ├── public/          # Static files
-│   └── src/             # React source code
-│       ├── components/  # React components
-│       └── features/    # Feature-specific components
-├── backend/             # Python backend
-│   └── src/             # Source code
-│       └── api/         # API endpoints
-├── ml/                  # Machine learning code
-│   ├── models/          # Model inference and saved models
-│   │   └── vehicle_classifier/  # Vehicle classification models
-│   │       ├── best_model.pt  # Main classification model
-│   │       └── label_encoders.pt  # Label encoders for predictions
-│   ├── train/           # Training pipeline
-│   └── pretrain/        # Data preparation scripts
-├── Docker Files
-│   ├── Dockerfile       # Main Docker configuration
-│   ├── docker-compose.yml  # Docker Compose configuration
-│   ├── nginx.conf       # Nginx configuration
-│   └── start.sh         # Container startup script
+C964-Capstone-Project/
+├── avis-dashboard/                             # Handles frontend UI and interactions
+│   ├── src/                                    # Contains frontend source code
+│   │   ├── AVISDashboard.js                    # Manages main application state and layout
+│   │   ├── VehicleVisualizations.js            # Renders prediction charts and graphs
+│   │   ├── index.js                            # Initializes React application
+│   │   └── index.css                           # Defines global styles
+│   ├── package.json                            # Manages frontend dependencies
+│   └── tailwind.config.js                      # Configures Tailwind CSS styling
+├── backend/                                    # Handles API requests and ML inference
+│   └── src/                                    # Contains backend source code
+│       └── api/                                # Defines API endpoints
+│           ├── vehicle_identification_api.py   # Processes image uploads and predictions
+│           ├── vehicle_data.json               # Stores vehicle database
+│           └── generate_vehicle_data.py        # Creates vehicle database from raw data
+├── ml/                                         # Handles machine learning operations
+│   ├── models/                                 # Manages model files and inference
+│   │   ├── model_inference.py                  # Runs predictions on images
+│   │   └── vehicle_classifier/                 # Stores trained models
+│   │       ├── best_model.pt                   # Performs vehicle classification
+│   │       ├── label_encoders.pt               # Maps predictions to labels
+│   │       └── accuracy_plots.png              # Displays model training metrics
+│   ├── train/                                  # Handles model training
+│   │   ├── training_pipeline/                  # Defines training components
+│   │   │   ├── model.py                        # Defines neural network architecture
+│   │   │   ├── dataset.py                      # Loads and processes training data
+│   │   │   └── trainer.py                      # Executes training loop
+│   │   └── train.py                            # Runs complete training pipeline
+│   └── pretrain/                               # Prepares training data
+│       └── preparator.py                       # Processes raw data for training
+├── Docker Configuration
+│   ├── Dockerfile                              # Builds multi-stage container image
+│   ├── docker-compose.yml                      # Orchestrates container services
+│   ├── nginx.conf                              # Routes HTTP traffic
+│   └── start.sh                                # Initializes container services
 └── Configuration Files
-    ├── requirements.in  # Python package requirements
-    ├── requirements.txt  # Locked Python dependencies
-    └── .gitignore       # Git ignore rules
+    ├── requirements.in                         # Defines Python dependencies - builds requirements.txt
+    ├── requirements.txt                        # Lists locked Python dependencies
+    ├── setup.ps1                               # Automates Windows setup
+    ├── setup.sh                                # Automates Linux/Mac setup
+    └── .gitignore                              # Excludes files from version control
 ```
+
+### Key Components
+
+- **Frontend**: Provides user interface for vehicle identification
+- **Backend**: Processes requests and runs ML inference
+- **Machine Learning**: Trains and runs vehicle classification
+- **Docker Configuration**: Builds and runs containerized services
+- **Configuration Files**: Manages dependencies and setup
 
 ## Required Model Files
 
