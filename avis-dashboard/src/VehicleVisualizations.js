@@ -9,7 +9,8 @@ import {
   Title,
   Tooltip as ChartTooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  Filler
 } from 'chart.js';
 import { Pie, Line } from 'react-chartjs-2';
 
@@ -22,7 +23,8 @@ ChartJS.register(
   ArcElement,
   Title,
   ChartTooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 // Tooltip wrapper component for consistent styling

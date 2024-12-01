@@ -13,7 +13,7 @@ import { Popover } from '@headlessui/react';
 import VehicleVisualizations from './VehicleVisualizations';
 
 // Tooltip wrapper component for consistent styling
-const TooltipWrapper = ({ children, content }) => {
+const TooltipWrapper = ({ children, content, position = 'bottom' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,17 +22,23 @@ const TooltipWrapper = ({ children, content }) => {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <Popover className="relative w-full h-full">
-        <Popover.Button as="div" className="w-full h-full outline-none">
-          {children}
-        </Popover.Button>
-        {isOpen && (
-          <Popover.Panel static className="absolute z-10 px-3 py-2 text-sm bg-gray-900 text-white rounded shadow-lg top-full left-1/2 transform -translate-x-1/2 mt-2">
-            {content}
-            <div className="absolute top-[-8px] left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45" />
-          </Popover.Panel>
-        )}
-      </Popover>
+      <div className="w-full h-full">
+        {children}
+      </div>
+      {isOpen && (
+        <div className={`absolute z-10 px-3 py-2 text-sm bg-gray-900 text-white rounded shadow-lg pointer-events-none ${
+          position === 'top' 
+            ? 'bottom-full left-1/2 transform -translate-x-1/2 mb-2' 
+            : 'top-full left-1/2 transform -translate-x-1/2 mt-2'
+        }`}>
+          {content}
+          <div className={`absolute ${
+            position === 'top'
+              ? 'bottom-[-8px] left-1/2 transform -translate-x-1/2 rotate-45'
+              : 'top-[-8px] left-1/2 transform -translate-x-1/2 rotate-45'
+          } w-2 h-2 bg-gray-900`} />
+        </div>
+      )}
     </div>
   );
 };
@@ -230,9 +236,9 @@ const PredictionCard = ({ title, predictionData }) => {
   if (!predictionData) return null;
 
   const tooltipContent = {
-    Make: "Shows predicted manufacturer with confidence scores and alternative matches",
-    Model: "Shows predicted model with confidence scores and alternative matches",
-    Year: "Shows predicted year with confidence scores and alternative matches"
+    Make: "Predicted manufacturer with confidence scores and alternative matches",
+    Model: "Predicted model with confidence scores and alternative matches",
+    Year: "Predicted year with confidence scores and alternative matches"
   };
 
   return (
@@ -532,78 +538,80 @@ const AVISDashboard = () => {
         {/* Main Content */}
         <div className="grid md:grid-cols-3 gap-4">
           {/* Integrated Upload Section */}
-          <div className="bg-white rounded-lg shadow p-3 h-[260px]">
-            <div className="flex flex-col h-full">
-              {/* Header and URL Input Row */}
-              <div className="flex items-center gap-2 mb-2">
-                <h2 className="text-lg font-semibold flex-shrink-0">Upload Vehicle Image</h2>
-              </div>
-              
-              <div className="flex gap-2 mb-2">
-                <input
-                  type="url"
-                  value={imageUrl}
-                  onChange={(e) => setImageUrl(e.target.value)}
-                  placeholder="Enter image URL"
-                  className="flex-1 p-1.5 border rounded text-sm"
-                />
-                <button
-                  onClick={handleUrlSubmit}
-                  disabled={loading}
-                  className="bg-blue-500 text-white px-3 py-1.5 rounded hover:bg-blue-600 text-sm disabled:opacity-50 flex-shrink-0"
-                >
-                  {loading ? 'Analyzing...' : 'Analyze'}
-                </button>
-              </div>
+          <TooltipWrapper content="Drop image here or click to select a new image">
+            <div className="bg-white rounded-lg shadow p-3 h-[260px]">
+              <div className="flex flex-col h-full">
+                {/* Header and URL Input Row */}
+                <div className="flex items-center gap-2 mb-2">
+                  <h2 className="text-lg font-semibold flex-shrink-0">Upload Vehicle Image</h2>
+                </div>
+                
+                <div className="flex gap-2 mb-2">
+                  <input
+                    type="url"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
+                    placeholder="Enter image URL"
+                    className="flex-1 p-1.5 border rounded text-sm"
+                  />
+                  <button
+                    onClick={handleUrlSubmit}
+                    disabled={loading}
+                    className="bg-blue-500 text-white px-3 py-1.5 rounded hover:bg-blue-600 text-sm disabled:opacity-50 flex-shrink-0"
+                  >
+                    {loading ? 'Analyzing...' : 'Analyze'}
+                  </button>
+                </div>
 
-              {/* Combined Drop Zone and Preview */}
-              <label 
-                className={`flex flex-col flex-1 w-full border-2 border-dashed 
-                  ${isDragging 
-                    ? 'border-blue-500 bg-blue-50' 
-                    : previewUrl
-                      ? 'border-transparent'
-                      : 'hover:bg-gray-50 hover:border-gray-300 border-gray-300'
-                  } transition-colors duration-150 ease-in-out cursor-pointer rounded-lg overflow-hidden relative`}
-                onDragEnter={handleDragEnter}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-              >
-                {previewUrl ? (
-                  <>
-                    <img
-                      src={previewUrl}
-                      alt="Vehicle"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-200 flex items-center justify-center">
-                      <div className="text-transparent hover:text-white transition-colors duration-200 text-center">
-                        <UploadCloud className="w-6 h-6 mx-auto" />
-                        <p className="text-sm">Drop new image or click to replace</p>
+                {/* Combined Drop Zone and Preview */}
+                <label 
+                  className={`flex flex-col flex-1 w-full border-2 border-dashed 
+                    ${isDragging 
+                      ? 'border-blue-500 bg-blue-50' 
+                      : previewUrl
+                        ? 'border-transparent'
+                        : 'hover:bg-gray-50 hover:border-gray-300 border-gray-300'
+                    } transition-colors duration-150 ease-in-out cursor-pointer rounded-lg overflow-hidden relative`}
+                  onDragEnter={handleDragEnter}
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={handleDrop}
+                >
+                  {previewUrl ? (
+                    <>
+                      <img
+                        src={previewUrl}
+                        alt="Vehicle"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-200 flex items-center justify-center">
+                        <div className="text-transparent hover:text-white transition-colors duration-200 text-center">
+                          <UploadCloud className="w-6 h-6 mx-auto" />
+                          <p className="text-sm">Drop new image or click to replace</p>
+                        </div>
                       </div>
+                    </>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center h-full">
+                      <UploadCloud className={`w-6 h-6 ${isDragging ? 'text-blue-500' : 'text-gray-400'}`} />
+                      <p className={`mt-1 text-sm ${isDragging ? 'text-blue-500' : 'text-gray-500'}`}>
+                        {isDragging ? 'Drop image here' : 'Drop image here or click to select'}
+                      </p>
+                      <p className="mt-0.5 text-xs text-gray-400">
+                        or use URL input above
+                      </p>
                     </div>
-                  </>
-                ) : (
-                  <div className="flex flex-col items-center justify-center h-full">
-                    <UploadCloud className={`w-6 h-6 ${isDragging ? 'text-blue-500' : 'text-gray-400'}`} />
-                    <p className={`mt-1 text-sm ${isDragging ? 'text-blue-500' : 'text-gray-500'}`}>
-                      {isDragging ? 'Drop image here' : 'Drop image here or click to select'}
-                    </p>
-                    <p className="mt-0.5 text-xs text-gray-400">
-                      or use URL input above
-                    </p>
-                  </div>
-                )}
-                <input
-                  type="file"
-                  className="opacity-0 absolute inset-0 w-full h-full cursor-pointer"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                />
-              </label>
+                  )}
+                  <input
+                    type="file"
+                    className="opacity-0 absolute inset-0 w-full h-full cursor-pointer pointer-events-auto"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                  />
+                </label>
+              </div>
             </div>
-          </div>
+          </TooltipWrapper>
 
           {/* Predictions Section */}
           {predictions ? (
@@ -643,6 +651,23 @@ const AVISDashboard = () => {
             ) : (
               <VehicleRecommendations recommendations={recommendations} />
             )}
+
+            {/* Model Accuracy Card */}
+            <TooltipWrapper 
+              content="Training accuracy metrics for best_model.pt"
+              position="top"
+            >
+              <div className="bg-white rounded-lg shadow p-3">
+                <h3 className="text-lg font-semibold mb-2">Model Training Metrics</h3>
+                <div className="flex justify-center">
+                  <img 
+                    src="/accuracy_plots.png" 
+                    alt="Model Training Accuracy"
+                    className="max-w-full h-auto"
+                  />
+                </div>
+              </div>
+            </TooltipWrapper>
           </div>
         )}
       </div>
